@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import takeInput from '../Actions/TextActions'
+import { takeInput, display } from '../Actions/TextActions'
 
 class Comp1 extends Component {
 
     constructor(props) {
         super(props);
+
+        this.displaymovie = this.displaymovie.bind(this);
+
+    }
+
+    displaymovie() {
+
+        return (
+            <div>
+                <p></p>
+            </div>
+        )
     }
 
     render() {
@@ -15,15 +27,15 @@ class Comp1 extends Component {
                 <div>
 
                     <div>
-                        <input type='text' onChange={this.props.handleChange}></input>
-                        <input type='submit' onClick={this.props.add}></input>
+                        <input type='text' onChange={this.props.handlechange}></input>
+                        <input type='submit' onClick={() => this.props.add(this.props.input)}></input>
                     </div>
                     <div>
                         <button id='btn' onClick={this.props.b}></button>
                     </div>
                 </div>
+                {this.displaymovie()}
                 <div>
-                    {this.props.a}
                 </div>
             </div>
         );
@@ -32,12 +44,12 @@ class Comp1 extends Component {
 
 const mapDispachToProps = (dispach) => {
     return {
-        b: () => dispach({ type: 'A' }),
-        handleChange: (event) => {
-                    
+        b: () => dispach({ type: 'a' }),
+        handlechange: (event) => {
+
             dispach(takeInput(event));
         },
-        add: () => dispach({ type: 'LIST' })
+        add: (input) => dispach(display(input))
     }
 }
 
@@ -47,7 +59,8 @@ const mapStateToProps = (state) => {
     return {
         a: state.reducerNumber.a,
         input: state.reducerText.input,
-        list: state.reducerText.list
+        list: state.reducerText.list,
+        movie: state.reducerText.movie
     }
 }
 

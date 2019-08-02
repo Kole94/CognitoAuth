@@ -1,34 +1,53 @@
 
+
+
 const initalState = {
-    input: 'GLOBAL BRTAIN',
-    list: []
+    input: '',
+    list: [],
+    movie: false,
+    loading: false
 }
 
 const reducerText = (state = initalState, action) => {
-    
 
-    switch(action.type){
-        
+
+    switch (action.type) {
+
+        case 'A':
+            console.log(state.movie)
+
+            return{
+                ...state
+            }
+        case 'LOADING':
+            console.log(state.movie)
+
+            return{
+                ...state,
+                loading: true
+            }
+
         case 'TAKE_INPUT':
+            console.log(state.movie)
             return {
                 ...state,
                 input: action.payload
             }
+
         case 'LIST':
+            console.log(state.movie)
 
-            var a = [];
-            a = state.list;
-            a.push(state.input);
-            state.list = a;
-            console.log(state.input)
-            console.log('HELLO BRE');
-
-            return{
+            return {
                 ...state,
-                list: a
+                movie: action.payload
             }
-    }
-    return {...state};
+
+        default:
+            return {
+                ...state
+            }
+
+        }
 }
 
 

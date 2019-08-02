@@ -2,7 +2,6 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 import reducerNumber from './reducerNumber'
 import reducerText from './reducerText'
 import thunk from 'redux-thunk'
-import logger from 'redux-logger'
 
 
 
