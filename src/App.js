@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import Comp1 from './Components/Comp1'
-import Comp2 from './Components/Comp2'
-import Comp3 from './Components/Comp3'
 import Login from './Components/Login'
-import PrivateRoute from './Components/PrivateRoute'
+import Start from './Components/Start'
+import Registration from './Components/Registration'
 import { Provider } from 'react-redux'
 import ConfigurStore from './store/configureStore'
 import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom';
+import St from './Components/St'
+import Header from './Components/Header'
 
 const store = ConfigurStore();
 
@@ -17,11 +17,12 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Switch>
-            <Route path='/' exact component={Login} />
+          <Route path='/' exact component={Start} />
 
-            <PrivateRoute path='/comp1' exact component={Comp1} />
-            <PrivateRoute path='/comp2' exact component={Comp2} />
-            <PrivateRoute path='/' exact component={Comp3} />
+            <Route path='/login' exact component={Login} />
+            <Route path='/registration' exact component={Registration} />
+            <Route path='/st' exact component={St} />
+
           </Switch>
         </BrowserRouter>
       </Provider>

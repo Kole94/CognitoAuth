@@ -44,3 +44,13 @@
   width: 30px;
   
 }
+
+
+.menu{
+  position: fixed;
+	top: 120px;
+	left: 0;
+	width: 300px;
+	height: calc(100vh - 120px);
+	background: #833793;
+}

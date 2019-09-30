@@ -7,6 +7,7 @@ import {Provider} from 'react-redux'
 import ConfigurStore from './store/configureStore'
 import Amplify, { Auth } from 'aws-amplify';
 import config from './config'
+import 'bootstrap-social/bootstrap-social.css';
 
 Amplify.configure({
     Auth: {

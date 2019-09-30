@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
+import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom';
 
-class Comp2 extends Component{
+
+class St extends Component{
     constructor(){
         super();
     }
@@ -9,16 +11,11 @@ class Comp2 extends Component{
     render(){
         return(
             <div>
-                <p>{this.props.a}</p>
+                <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    return{
-        a: state.a
-    }
-} 
 
-export default connect(mapStateToProps)(Comp2);
+export default St;
