@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 
-class Login extends Component{
+class Questionnaires extends Component{
     constructor(){
         super();
     }
@@ -9,16 +9,11 @@ class Login extends Component{
     render(){
         return(
             <div>
-                <p>{this.props.a}</p>
+                <p>Questionnaires</p>
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    return{
-        a: state.a
-    }
-} 
 
-export default connect(mapStateToProps)(Login);
+export default Questionnaires;

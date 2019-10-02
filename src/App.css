@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'bpicons';
+	font-weight: normal;
+	font-style: normal;}
+
 .App {
   text-align: center;
 }
@@ -45,12 +50,146 @@
   
 }
 
+.slide-enter {
+  transform: translateX(-100%);
+}
 
-.menu{
-  position: fixed;
-	top: 120px;
-	left: 0;
-	width: 300px;
-	height: calc(100vh - 120px);
-	background: #833793;
+.slide-enter-active{
+  animation: slide-in 300ms ease-out forwards;
+}
+
+.slide-leave{
+  transform: translateX(0%);
+}
+.slide-leave-active{
+  animation: slide-out 300ms ease-out forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%)
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%)
+  }
+}
+
+
+
+
+
+
+
+
+
+.navbar{
+  display: flex;
+  flex-direction: column;
+	height: 300vh;
+  width: 300px;
+  background-color: #833793;
+
+}
+
+.head{
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  height: 60px;
+  line-height:0px;
+  text-align: justify; 
+  margin-top: 200px;
+
+}
+
+.nav{
+  display: flex;
+  cursor: pointer;
+  justify-content: flex-start;
+  height: 200px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.navbar{
+  display: flex;
+  justify-content: flex-start;
+  color: white;
+
+}
+p:hover {
+  color:black;
+}
+
+.menu_list{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px;
+}
+
+
+.menu_head{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 20px;
+}
+
+.start{
+  justify-content: flex-start;
+  -webkit-transition: color 0.1s;
+	transition: color 0.1s;
+}
+
+.menu_link{
+  transition-duration: 1s;
+}
+
+.menu__link:hover,
+.menu__link:focus,
+.menu__link[data-submenu]:hover::after,
+.menu__link[data-submenu]:focus::after {
+	color: #fff;
+}
+
+
+.page-appear {
+  opacity: 0;
+  z-index: 1;
+}
+.page-appear.page-appear-active {
+opacity: 1;
+transition: opacity 1000ms linear;
+}
+
+/* enter */
+.page-enter {
+opacity: 0;
+z-index: 1;
+}
+.page-enter.page-enter-active {
+  opacity: 1;
+  transition: opacity 5000ms linear 5000ms;
+}
+
+/* exit */
+.page-exit {
+  opacity: 1;
+}
+.page-exit.page-exit-active {
+  opacity: 0;
+  transition: opacity 5000ms linear;
+}
+.page-exit-done {
+opacity: 0;
 }

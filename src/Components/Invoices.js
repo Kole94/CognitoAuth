@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom';
 
-
-class St extends Component{
+class Invoices extends Component{
     constructor(){
         super();
     }
@@ -11,11 +9,11 @@ class St extends Component{
     render(){
         return(
             <div>
-                <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                <p>Invoices</p>
             </div>
         )
     }
 }
 
 
-export default St;
+export default Invoices;

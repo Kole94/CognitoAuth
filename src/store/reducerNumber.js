@@ -1,19 +1,19 @@
 const initalState = {
-    a: 20
+    a: 0
 }
-
 const reducerNumber = (state = initalState, action) => {
-    switch(action.type){
-        case 'A':
-            console.log('a');
-            return{
+    switch (action.type) {
+        case 'CLICK':
+            return {
                 ...state,
-                a: ++state.a
+                a: action.payload,
             }
-            
-    }
 
-    return {...state};
+        default:
+            return {
+                ...state
+            }
+    }
 }
 
 export default reducerNumber;
